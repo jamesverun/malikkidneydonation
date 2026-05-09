@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malik Kidney Donation Support</title>
+
+  <meta name="description" content="Malik Kidney Donation Support helps connect kidney donors and patients through awareness, support, guidance, and compassionate care.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f7fbfc;
+      color:#1f2937;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#ffffff;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#0b74b8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a{
+      color:#1f2937;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0b74b8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(7, 37, 66, 0.65), rgba(7, 37, 66, 0.65)),
+      url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      color:white;
+    }
+
+    .hero-content{
+      max-width:700px;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      margin-bottom:30px;
+      color:#e5f4ff;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#25D366;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#1fb857;
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      background:#0b74b8;
+      color:white;
+    }
+
+    .btn-secondary:hover{
+      background:#095f95;
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:2.4rem;
+      color:#0b74b8;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#6b7280;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* CARDS */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#0b74b8;
+    }
+
+    /* AWARENESS */
+
+    .awareness{
+      background:#eef9f4;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonial{
+      background:white;
+      border-left:5px solid #25D366;
+    }
+
+    .testimonial p{
+      font-style:italic;
+      margin-bottom:15px;
+    }
+
+    /* FAQ */
+
+    .faq-item{
+      background:white;
+      margin-bottom:15px;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h4{
+      color:#0b74b8;
+      margin-bottom:10px;
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+    }
+
+    form{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    input, textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:18px;
+      border:1px solid #d1d5db;
+      border-radius:10px;
+      font-family:'Poppins',sans-serif;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#072542;
+      color:white;
+      padding:50px 0 20px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      margin-bottom:30px;
+    }
+
+    footer h3{
+      margin-bottom:15px;
+    }
+
+    footer a{
+      color:#dbeafe;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .copyright{
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.2);
+      padding-top:20px;
+      font-size:0.95rem;
+    }
+
+    /* WHATSAPP FLOAT */
+
+    .whatsapp-float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      bottom:25px;
+      right:25px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.25);
+      z-index:999;
+      animation:pulse 2s infinite;
+    }
+
+    .whatsapp-float img{
+      width:35px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.1);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.4rem;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Malik Kidney Donation Support</div>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#awareness">Awareness</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <h1>Giving the Gift of Life Through Kidney Donation</h1>
+
+        <p>
+          Helping connect kidney donors and patients with guidance,
+          support, and compassionate care.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="https://wa.me/message/3EC7OTWV4IWGK1"
+             target="_blank"
+             class="btn btn-primary">
+             Contact on WhatsApp
+          </a>
+
+          <a href="mailto:kidneyhospitalappollokidney@gmail.com"
+             class="btn btn-secondary">
+             Email Us
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Us</h2>
+        <p>Compassionate kidney donation awareness and support.</p>
+      </div>
+
+      <div class="about">
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="Healthcare Support">
+        </div>
+
+        <div>
+          <p>
+            Malik Kidney Donation Support helps raise awareness about kidney donation
+            while supporting both patients and donors through compassionate guidance.
+          </p>
+
+          <br>
+
+          <p>
+            We believe every patient deserves hope, support, and respectful communication.
+            Our platform focuses on awareness, emotional support, medical guidance assistance,
+            and confidential communication for families and individuals seeking help.
+          </p>
+
+          <br>
+
+          <p>
+            We are committed to maintaining privacy, professionalism, ethical awareness,
+            and a trustworthy healthcare-focused environment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Helping donors and patients with compassionate assistance.</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Kidney Donation Guidance</h3>
+          <p>Providing educational support and guidance regarding kidney donation awareness.</p>
+        </div>
+
+        <div class="card">
+          <h3>Donor & Patient Support</h3>
+          <p>Compassionate support for individuals and families during difficult times.</p>
+        </div>
+
+        <div class="card">
+          <h3>Medical Consultation Assistance</h3>
+          <p>Helping connect patients with proper medical consultation resources.</p>
+        </div>
+
+        <div class="card">
+          <h3>Awareness & Education</h3>
+          <p>Spreading awareness regarding kidney health and ethical donation practices.</p>
+        </div>
+
+        <div class="card">
+          <h3>Emergency Contact Support</h3>
+          <p>Quick response communication and support through WhatsApp assistance.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Confidential Communication</h3>
+          <p>Your privacy and communication are handled respectfully and professionally.</p>
+        </div>
+
+        <div class="card">
+          <h3>Fast Response</h3>
+          <p>We aim to respond quickly to support patients and families.</p>
+        </div>
+
+        <div class="card">
+          <h3>Compassionate Support</h3>
+          <p>Our focus is emotional support, care, and respectful communication.</p>
+        </div>
+
+        <div class="card">
+          <h3>24/7 WhatsApp Assistance</h3>
+          <p>Instant support available through WhatsApp communication.</p>
+        </div>
+
+        <div class="card">
+          <h3>Professional Guidance</h3>
+          <p>Healthcare-style professional experience with trustworthy information.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARENESS -->
+
+  <section class="awareness" id="awareness">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Kidney Donation Awareness</h2>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Importance of Donation</h3>
+          <p>Kidney donation can help save lives and provide hope for patients facing kidney failure.</p>
+        </div>
+
+        <div class="card">
+          <h3>Living Donation</h3>
+          <p>Living kidney donation allows healthy individuals to donate one kidney safely.</p>
+        </div>
+
+        <div class="card">
+          <h3>Safety & Ethics</h3>
+          <p>Donation awareness should always follow medical safety and ethical healthcare practices.</p>
+        </div>
+
+        <div class="card">
+          <h3>Hope & Support</h3>
+          <p>Supportive communication and awareness can help families feel informed and hopeful.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Testimonials</h2>
+      </div>
+
+      <div class="grid">
+
+        <div class="card testimonial">
+          <p>
+            “The support and communication gave our family hope during a difficult time.”
+          </p>
+          <strong>— Patient Family</strong>
+        </div>
+
+        <div class="card testimonial">
+          <p>
+            “Professional, caring, and respectful guidance throughout the process.”
+          </p>
+          <strong>— Kidney Donor</strong>
+        </div>
+
+        <div class="card testimonial">
+          <p>
+            “Quick WhatsApp support and compassionate communication helped us greatly.”
+          </p>
+          <strong>— Patient Supporter</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section id="faq">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-item">
+        <h4>What is kidney donation?</h4>
+        <p>Kidney donation is the process of donating a healthy kidney to help a patient with kidney failure.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is living donation safe?</h4>
+        <p>Living kidney donation is carefully evaluated medically to ensure donor safety and health.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How can I contact support?</h4>
+        <p>You can contact us through WhatsApp or email anytime for assistance.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is communication confidential?</h4>
+        <p>Yes, privacy and respectful communication are important priorities.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Us</h2>
+      </div>
+
+      <div class="contact-wrapper">
+
+        <div>
+
+          <h3>Email</h3>
+          <p>kidneyhospitalappollokidney@gmail.com</p>
+
+          <br>
+
+          <h3>WhatsApp</h3>
+          <p>+91 8880282802</p>
+
+          <br>
+
+          <p>
+            Reach out anytime for support, awareness information,
+            and compassionate guidance.
+          </p>
+
+        </div>
+
+        <form>
+
+          <input type="text" placeholder="Your Name" required>
+
+          <input type="email" placeholder="Your Email" required>
+
+          <textarea placeholder="Your Message"></textarea>
+
+          <button class="btn btn-secondary" type="submit">
+            Submit Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>Malik Kidney Donation Support</h3>
+          <p>
+            Supporting kidney donation awareness with compassion,
+            guidance, and care.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#awareness">Awareness</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+          <h3>Contact Info</h3>
+
+          <p>Email:</p>
+          <p>kidneyhospitalappollokidney@gmail.com</p>
+
+          <br>
+
+          <p>WhatsApp:</p>
+          <p>+91 8880282802</p>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Malik Kidney Donation Support. All Rights Reserved.
+        Privacy-focused compassionate support.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+
+  <a href="https://wa.me/message/3EC7OTWV4IWGK1"
+     class="whatsapp-float"
+     target="_blank">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+         alt="WhatsApp">
+
+  </a>
+
+</body>
+</html>
